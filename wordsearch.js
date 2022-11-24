@@ -1,9 +1,9 @@
 const wordSearch = (letters, word) => {
   let newArr = [];
   const horizontalJoin = letters.map((ls) => ls.join(""));
-if (letters.length <= 0) {
-    return false
-}
+  if (letters.length <= 0) {
+    return false;
+  }
   for (l of horizontalJoin) {
     // for (x in verticalJoin)
     if (l.includes(word)) return true;
@@ -15,15 +15,15 @@ if (letters.length <= 0) {
     for (let x = 0; x < letters.length; x++) {
       result[i].push(letters[x][i]);
     }
-    console.log(result)
+    console.log(result);
   }
-    const verticalJoin = result.map((xs) => xs.join(""));
-    for (l of verticalJoin) {
-      // for (x in verticalJoin)
-      if (l.includes(word)) return true;
-    }
-    return false;
-  
+  const verticalJoin = result.map((xs) => xs.join(""));
+  for (l of verticalJoin) {
+    // for (x in verticalJoin)
+    if (l.includes(word)) return true;
+  }
+  return false;
+
 };
 // need another for loop to check for the word vertically
 // will have to rebuild the array with the vertical words
@@ -45,4 +45,4 @@ const result = wordSearch(
   ],
   "FRANK"
 );
-console.log(result)
+console.log(result);
